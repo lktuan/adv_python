@@ -1,5 +1,15 @@
+# my dev tools
 mypy==1.13
 mypy-extensions==1.0.0
 ruff==0.8.3
 typing-extensions==4.12.2
+ipython
+
+# required by the book
+# c1
 matplotlib==3.9
+pytest
+pytest-benchmark==5.1.0
+line_profiler
+memory_profiler==0.61.0
+psutil # make memory_profiler considerablly faster
