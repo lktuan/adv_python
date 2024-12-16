@@ -4,7 +4,7 @@ How to assess the performance of Python programs & how to identify and isolate t
 
 ## 1 designing your application
 
-Make it run, make it right (re-factoring), make it fast (optimization), in that order.
+> Make it run, make it right (re-factoring), make it fast (optimization), in that order.
 
 We constructed an object `Particle` representing the particle in reality, and `ParticleSimulator` representing the motion of it. A particle just constantly rotates **perpendicularly** around a central point ~ like a hand of a clock.
 
@@ -17,17 +17,17 @@ python .\book\c1\particle_simul.py
 ## 2 writing tests and benchmarks
 
 - a test checks whether the results produced is correct or not;
-- a benchmark assess the application in term of running time efficiency.
+- a benchmark assesses the application in term of running time efficiency.
 
 We can write test functions for specific functions to check if they produce the same output with desireable results.
 
-For benchmarking, the simplest way is to use the `time` command for Unix-like OS. In Window, we can you `cygwin` shell, or `Measure-Command` in PowerShell.
+For benchmarking, the simplest way is to use the `time` command for Unix-like OS. In Window, we can use `cygwin` shell, or `Measure-Command` in PowerShell.
 
-Another approach is using `timeit` built-in Python. We can use it in either Python/Ipython Interface or CLI.
+Another approach is using `[timeit](https://docs.python.org/3/library/timeit.html)` built-in Python. We can use it in either Python/Ipython Interface or CLI.
 
 ## 3 writing better tests and benchmarks with `pytest-benchmark`
 
-The modern approach is to use `pytest` for testing and `pytest-benchmark` for benchmarking.
+The modern approach is to use `[pytest](https://docs.pytest.org/en/stable/)` for testing and `[pytest-benchmark](https://pypi.org/project/pytest-benchmark/)` for benchmarking.
 
 ```bash
 # syntax: pytest path/to/module.py::function_name
@@ -55,7 +55,6 @@ There is also a graphical way to assess our parts of code: **KCachegrind** with 
 
 We will dive into method with `line_profiler`, first we must decorate our function `evolve`:
 
-
 ```python
 from line_profiler import profile
 
@@ -64,7 +63,7 @@ def evolve(self, dt):
     # code
 ```
 
-and run with `kernprof`
+and run with `kernprof`:
 
 ```bash
 python -m kernprof -l -v  .\book\c1\particle_simul.py
@@ -117,7 +116,7 @@ There are multiple ways to optimize our code:
 - pre-calculate parts that do not change over time, outside the loop;
 - reduce the assignment operators.
 
-We end up writing `evolve_fast` function. I also use a `timeit` decorator to measure and compare the time consumed for 2 versions (suggested by [HuyenChip](https://github.com/chiphuyen/python-is-cool?tab=readme-ov-file#6-decorator-to-time-your-functions)). The by simply run:
+We end up writing `evolve_fast` function. I also use a `timeit` decorator to measure and compare the time consumed for 2 versions (suggested by [HuyenChip](https://github.com/chiphuyen/python-is-cool?tab=readme-ov-file#6-decorator-to-time-your-functions)). Then by simply run:
 
 ```python
 python .\book\c1\particle_simul.py
@@ -125,7 +124,7 @@ python .\book\c1\particle_simul.py
 # Time taken in evolve_fast: 4.5114696
 ```
 
-The speed improved near 20%.
+We can see the speed improved by near 20%.
 
 ## 6 using `dis` module
 
