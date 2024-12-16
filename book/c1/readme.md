@@ -23,11 +23,12 @@ We can write test functions for specific functions to check if they produce the 
 
 For benchmarking, the simplest way is to use the `time` command for Unix-like OS. In Window, we can use `cygwin` shell, or `Measure-Command` in PowerShell.
 
-Another approach is using `[timeit](https://docs.python.org/3/library/timeit.html)` built-in Python. We can use it in either Python/Ipython Interface or CLI.
+Another approach is using [`timeit`](https://docs.python.org/3/library/timeit.html) built-in Python. We can use it in either Python/Ipython Interface or CLI.
+
 
 ## 3 writing better tests and benchmarks with `pytest-benchmark`
 
-The modern approach is to use `[pytest](https://docs.pytest.org/en/stable/)` for testing and `[pytest-benchmark](https://pypi.org/project/pytest-benchmark/)` for benchmarking.
+The modern approach is to use [`pytest`](https://docs.pytest.org/en/stable/) for testing and [`pytest-benchmark`](https://pypi.org/project/pytest-benchmark/) for benchmarking.
 
 ```bash
 # syntax: pytest path/to/module.py::function_name
@@ -69,7 +70,7 @@ and run with `kernprof`:
 python -m kernprof -l -v  .\book\c1\particle_simul.py
 # -l to use line profiler
 # -v to immediately print the result to the screen
-# this also make a binary .py.lprof file
+# this also makes a binary .py.lprof file
 ```
 
 The output is:
