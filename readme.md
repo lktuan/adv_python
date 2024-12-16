@@ -1,7 +1,7 @@
 # Advanced Python Programming
 by Quan Nguyen via PacktPublishing
 
-This repo holds my code/note experience along reading this book. The book comprises 4 parts:
+This repo holds my code/note experience along reading this book. The book comprises 3 parts:
 
 1. Python Native & Specialized Optimization (c1 - c6);
 2. Concurrency & Parallelism (c7 - c15);
