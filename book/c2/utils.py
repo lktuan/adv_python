@@ -1,5 +1,6 @@
 # This cell contains some utility functions to prepare and execute the benchmarks
 import timeit
+from collections import defaultdict
 from random import choice
 from string import ascii_uppercase
 
@@ -40,3 +41,20 @@ def print_scaling(stmt, setup, sizes=[10000, 20000, 30000], repeat=False, units=
             for n, t in zip(sizes, values)
         ),
     )
+
+
+def counter_defaultdict(items):
+    counter = defaultdict(int)
+    for item in items:
+        counter[item] += 1
+    return counter
+
+
+def counter_dict(items):
+    counter = {}
+    for item in items:
+        if item not in counter:
+            counter[item] = 0
+        else:
+            counter[item] += 1
+    return counter

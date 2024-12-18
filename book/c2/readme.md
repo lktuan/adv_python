@@ -25,6 +25,10 @@ python .\book\c2\lists.py
 
 Lists might not be efficient for insertion or removal both at the beginning and the end of the collection. We use `collections.deque` (*deque* stands for **double-ended queue**).
 
+`pop()` and `popleft()` will remove the last (on the right) and the fist (on the left) of the deque with time complexity `O(1)`. Similar for appending operations. But this comes with a cost, accessing the middle element of the deque will require `O(N)` time.
+
+The searching operation in a list normally requires 'O(N)' (with `list.index`). A simple way to speed up is using `bisect.bisect` (module `collection`).
+
 | Method | Time |
 | --- | --- |
 | `deque.pop()` | O(1) |
@@ -34,9 +38,12 @@ Lists might not be efficient for insertion or removal both at the beginning and 
 | `deque[0]` | O(1) |
 | `deque[N-1]` | O(1) |
 | `deque[int(N / 2)]` | O(N) |
-
+| `list.index(a)` | O(N) |
+| `index_bisect(list, a)` | O(log(N)) |
 
 ### Dictionaries
+
+
 
 ### Sets
 
