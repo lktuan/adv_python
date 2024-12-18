@@ -21,13 +21,28 @@ python .\book\c2\lists.py
 | `list.append(1)` | O(1) |
 | `list.insert(0, 1)` | O(N) |
 
-### Deques
+### Deque
 
 Lists might not be efficient for insertion or removal both at the beginning and the end of the collection. We use `collections.deque` (*deque* stands for **double-ended queue**).
 
+| Method | Time |
+| --- | --- |
+| `deque.pop()` | O(1) |
+| `deque.popleft()` | O(1) |
+| `deque.append()` | O(1) |
+| `deque.appendleft()` | O(1) |
+| `deque[0]` | O(1) |
+| `deque[N-1]` | O(1) |
+| `deque[int(N / 2)]` | O(N) |
 
 
-###
+### Dictionaries
+
+### Sets
+
+### Heaps
+
+### Trees
 
 ## 2 improving efficiency with caching and memoization
 

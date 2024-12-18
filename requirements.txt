@@ -4,6 +4,7 @@ mypy-extensions==1.0.0
 ruff==0.8.3
 typing-extensions==4.12.2
 ipython
+pre-commit
 
 # required by the book
 # c1

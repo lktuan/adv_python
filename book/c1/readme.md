@@ -107,7 +107,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     61                                                           # 3. repeat for all the time steps
 ```
 
-By looking at `%Time` column, we can have a good idea of somewhat a few statements in for loop are consuming most of cost. 
+By looking at `%Time` column, we can have a good idea of somewhat a few statements in for loop are consuming most of cost.
 
 ## 5 optimizing your code
 
@@ -134,7 +134,7 @@ We will be more delve into how Python code is interpreted into **bytecode** in C
 Jump into interative mode by:
 
 ```bash
-ipython -i .\book\c1\particle_simul.py 
+ipython -i .\book\c1\particle_simul.py
 ```
 
 then:
@@ -177,11 +177,9 @@ Line #    Mem usage    Increment  Occurrences   Line Contents
    187    115.4 MiB     -0.1 MiB           1       simulator.evolve(0.001)
 ```
 
-We can see now 100k particles consumed 13.7 MiB (not MB) memory. We can use `__slots__` dunder method to avoid storing variables of the instance in an internal memory. 
+We can see now 100k particles consumed 13.7 MiB (not MB) memory. We can use `__slots__` dunder method to avoid storing variables of the instance in an internal memory.
 
 ## Summary
 
 - testing and benchmarking: `pytest`, `pytest-benchmarking`;
 - profiling: `cProfile`, `line_profiler`, `memory_profiler`.
-
-

@@ -28,3 +28,7 @@ and install depenencies for this book with:
 ```bash
 uv pip install -r .\requirements.txt
 ```
+
+You might need to `pre-commit install` then the setup will be completed!
+
+Happy learning!

@@ -1,0 +1,54 @@
+# .pre-commit-config.yaml
+# Configuration for pre-commit hooks in a Python data project
+# Ensures code quality with mypy type checking and ruff linting
+
+repos:
+  # Ruff for fast linting and formatting
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.2  # Use the latest stable version
+    hooks:
+      # Run ruff check (linting)
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+        types_or: [python]
+
+      # Run ruff format (replacing black)
+      - id: ruff-format
+        types_or: [python]
+
+  # Mypy for static type checking
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.9.0  # Use the latest stable version
+    hooks:
+      - id: mypy
+        args: [--ignore-missing-imports]
+        additional_dependencies:
+          - types-requests
+          - types-python-dateutil
+          - types-PyYAML
+          # Add other specific type stubs as needed for your project
+        # exclude: ^(tests/|setup.py)  # Optionally exclude test files and setup
+
+  # Optional: Add other useful pre-commit hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      # Remove trailing whitespace
+      - id: trailing-whitespace
+
+      # Ensure file ends with a newline
+      - id: end-of-file-fixer
+
+      # Check for non-ascii filenames
+      - id: check-case-conflict
+
+      # Prevent committing large files
+      - id: check-added-large-files
+        args: ['--maxkb=500']  # Limit file size to 500KB
+
+# Global configuration
+default_language_version:
+  python: python3.11  # Specify your Python version
+
+# Optional: Skip files or directories
+# exclude: '^book/data/.*$'  # Exclude data directory if needed
