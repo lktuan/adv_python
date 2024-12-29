@@ -43,7 +43,17 @@ The searching operation in a list normally requires 'O(N)' (with `list.index`). 
 
 ### Dictionaries
 
+Dictionaries are widely used in Python including objects (packages, modules, classes) namespaces and annotations. They're implemented as **hash maps** and performing well with insertion, deletion, accessing with O(1) time complexity on average.
 
+A typical (advanced) use case of dictionaries/hash maps is efficiently counting unique elements in a list. This pattern is wrapped in Python module named `collections`. Below wecan see all these methods have the same time complexity, but the `Counter()` is most efficient - check by run the `dictionaries.py`:
+
+| Method | Time |
+| --- | --- |
+| `Counter(items)` | O(N) |
+| `counter_dict(items)` | O(N) |
+| `counter_defaultdict(items)` | O(N) |
+
+Another
 
 ### Sets
 

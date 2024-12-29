@@ -54,7 +54,7 @@ def counter_dict(items):
     counter = {}
     for item in items:
         if item not in counter:
-            counter[item] = 0
+            counter[item] = 1
         else:
             counter[item] += 1
     return counter
