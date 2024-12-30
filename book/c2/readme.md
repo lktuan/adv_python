@@ -53,9 +53,29 @@ A typical (advanced) use case of dictionaries/hash maps is efficiently counting 
 | `counter_dict(items)` | O(N) |
 | `counter_defaultdict(items)` | O(N) |
 
-Another
+Another use case is building an in-memory search index using a hash map. By creating an **inverted index**, we can turn a list of documents to a hash map which presents all terms and all indices of documents that match.
+
+Examine the file `hashmap_search.py`. Creating index hash map require O(n), and access it to search the term is O(1).
 
 ### Sets
+
+Sets are unordered collections of **unique** elements, implemented using a hash-based algorithm. Operations such as addition, deletion, and testing for membership are all O(1).
+
+A typical use case of sets is removing duplicates from a collection, we can just pass the collection to the `set()` constructor.
+
+Common methods time complexity of set is shown in table below, which `s` is the first set, `t` is the second one.
+
+| Method | Time |
+| --- | --- |
+| `s.union(t)` | O(S + T) |
+| `s.intersection(t)` | O(min(S, T)) |
+| `s.difference(t)` | O(S) |
+
+Back into the previous example of **inverted index**, we can get a list of documents contain both "cat" and "table" just by getting the intersection of:
+
+```python
+index['cat'].intersection(index['table'])
+```
 
 ### Heaps
 
